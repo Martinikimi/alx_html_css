@@ -5,47 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage - Techium</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    
     <!-- Link to the styles.css file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div>
-            <div>
-                <a href="/">
-                    <img src="images/logo.png" alt="Techium logo" width="160" height="40">
-                </a>
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="/">
+                        <img src="images/logo.png" alt="Techium logo" width="160" height="40">
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="#works" class="nav-link">Works</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#latest_news" class="nav-link">Latest news</a></li>
+                        <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Mobile menu button -->
+                    <button class="menu-toggle" aria-label="Toggle navigation">
+                        <span class="hamburger"></span>
+                    </button>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#latest_news">Latest news</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <main>
-        <h1>Homepage</h1>
-        
-        <!-- Hero section -->
-        <section>
-            <div>
-                <h2>We help you build your brand!</h2>
-                <a href="#">Get started</a>
+        <!-- Hero/Banner Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">We help you build your brand!</h1>
+                    <p class="hero-subtitle">Techium is a digital agency that creates amazing digital experiences</p>
+                    <a href="#" class="btn btn-primary">Get started</a>
+                </div>
             </div>
         </section>
 
         <!-- Services section -->
         <section id="services">
-            <div>
+            <div class="container">
                 <header>
                     <h2>Services</h2>
                     <p>We work with you</p>
@@ -63,7 +76,7 @@
 
         <!-- Works section -->
         <section id="works">
-            <div>
+            <div class="container">
                 <header>
                     <h2>Works</h2>
                     <p>Take a look in our portfolio</p>
@@ -84,26 +97,26 @@
 
         <!-- About Us section -->
         <section id="about">
-            <div>
+            <div class="container">
                 <header>
                     <h2>About Us</h2>
                     <p>Everything about us</p>
                 </header>
                 <div>
                     <h3>Who are we</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, omnis expedita! Eum, praesentium cumque accusantium rem, sit quaerat est nisi ratione, deserunt ducimus quidem iste dicta quibusdam atque maxime cum!</p>
                     <h3>Our culture</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, omnis expedita! Eum, praesentium cumque accusantium rem, sit quaerat est nisi ratione, deserunt ducimus quidem iste dicta quibusdam atque maxime cum!</p>
                     <h3>How we work</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, omnis expedita! Eum, praesentium cumque accusantium rem, sit quaerat est nisi ratione, deserunt ducimus quidem iste dicta quibusdam atque maxime cum!</p>
                 </div>
-                <a href="about.html">Learn more about us</a>
+                <a href="about.html" class="btn">Learn more about us</a>
             </div>
         </section>
 
         <!-- Latest news section -->
         <section id="latest_news">
-            <div>
+            <div class="container">
                 <header>
                     <h2>Latest news</h2>
                 </header>
@@ -111,17 +124,17 @@
                     <article>
                         <p>Career</p>
                         <h3><a href="#">Hoc loco tenere se Triarius non potuit.</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id Sextilius factum negabat. Quo tandem modo? At eum nihili facit; Quae contraria sunt his, malane?</p>
                     </article>
                     <article>
                         <p>Digital Life</p>
                         <h3><a href="#">Ut alios omittam, hunc appello, quem ille unum secutus est.</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tum mihi Piso: Quid ergo? Tum ille: Ain tandem? Non autem hoc: igitur ne illud quidem. Sed quod proximum fuit non vidit. Nos commodius agimus. An nisi populari fama?</p>
                     </article>
                     <article>
                         <p>Social</p>
                         <h3><a href="#">Bestiarum vero nullum iudicium puto.</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non igitur bene. Quid enim est a Chrysippo praetermissum in Stoicis? Pugnant Stoici cum Peripateticis. Prioris generis est docilitas, memoria; Apparet statim, quae sint officia, quae actiones.</p>
                     </article>
                 </div>
             </div>
@@ -129,7 +142,7 @@
 
         <!-- Testimonials section -->
         <section id="testimonials">
-            <div>
+            <div class="container">
                 <header>
                     <h2>Testimonials</h2>
                     <p>We are more than a digital company</p>
@@ -159,37 +172,62 @@
 
         <!-- Contact section -->
         <section id="contact">
-            <div>
+            <div class="container">
                 <header>
                     <h2>Contact</h2>
                     <p>We like to know new people</p>
                 </header>
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id Sextilius factum negabat. Quo tandem modo? At eum nihili facit; Quae contraria sunt his, malane?</p>
                 </div>
-                <a href="contact.html">Get in touch</a>
+                <a href="contact.html" class="btn">Get in touch</a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div>
-            <ul>
-                <li><a href="https://www.facebook.com/HolbertonSchool/">Facebook</a></li>
-                <li><a href="https://twitter.com/holbertonschool">Twitter</a></li>
-                <li><a href="https://www.instagram.com/holbertonschool/">Instagram</a></li>
-            </ul>
-        </div>
-        <hr>
-        <p>© 2020 Techium, made with ♥ by students at Holberton School.</p>
-        <div>
-            <ul>
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-            </ul>
+        <div class="container">
+            <div>
+                <ul>
+                    <li><a href="https://www.facebook.com/HolbertonSchool/">Facebook</a></li>
+                    <li><a href="https://twitter.com/holbertonschool">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/holbertonschool/">Instagram</a></li>
+                </ul>
+            </div>
+            <hr>
+            <p>© 2020 Techium, made with ♥ by students at Holberton School.</p>
+            <div>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
