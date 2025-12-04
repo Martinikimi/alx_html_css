@@ -48,3 +48,14 @@ header {
 footer {
     border-top: 1px solid #ddd;
 }
+
+/* Responsive design for smartphones */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    
+    article, aside {
+        width: 100%;
+    }
+}
