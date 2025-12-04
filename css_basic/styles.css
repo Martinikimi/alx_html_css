@@ -8,14 +8,14 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body takes full viewport height */
+    min-height: 100vh;
 }
 
 /* Main as a row flex container */
 main {
     display: flex;
     flex-direction: row;
-    flex: 1; /* Changed from flex: auto to flex: 1 to fill available space */
+    flex: 1;
     width: 100%;
 }
 
@@ -47,5 +47,4 @@ header {
 
 footer {
     border-top: 1px solid #ddd;
-    margin-top: auto; /* Push footer to bottom */
 }
