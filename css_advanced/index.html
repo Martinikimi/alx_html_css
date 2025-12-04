@@ -6,6 +6,7 @@
     <title>Homepage - Techium</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -26,8 +27,9 @@
                         <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                         <li class="nav-item"><a href="#works" class="nav-link">Works</a></li>
                         <li class="nav-item"><a href="#videos" class="nav-link">Videos</a></li>
+                        <li class="nav-item"><a href="#membership" class="nav-link">Membership</a></li>
+                        <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
                         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="#latest_news" class="nav-link">Latest news</a></li>
                         <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
@@ -158,6 +160,121 @@
             </div>
         </section>
 
+        <!-- Membership section -->
+        <section id="membership" class="membership-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Choose Your Plan</h2>
+                    <p class="section-subtitle">Join our community and get access to exclusive content and features</p>
+                </header>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Basic</h3>
+                        <div class="plan-price">$19</div>
+                        <div class="plan-period">per month</div>
+                        <ul class="plan-features">
+                            <li>Access to basic tutorials</li>
+                            <li>Community forum access</li>
+                            <li>Weekly newsletter</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3 class="plan-name">Pro</h3>
+                        <div class="plan-price">$49</div>
+                        <div class="plan-period">per month</div>
+                        <ul class="plan-features">
+                            <li>Everything in Basic</li>
+                            <li>Advanced tutorials</li>
+                            <li>Project files download</li>
+                            <li>Priority email support</li>
+                            <li>Monthly webinars</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <div class="plan-price">$99</div>
+                        <div class="plan-period">per month</div>
+                        <ul class="plan-features">
+                            <li>Everything in Pro</li>
+                            <li>Custom tutorials</li>
+                            <li>One-on-one coaching</li>
+                            <li>24/7 phone support</li>
+                            <li>Team management</li>
+                            <li>Custom branding</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Find answers to common questions about our services and membership</p>
+                </header>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What payment methods do you accept?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All payments are processed securely through our payment gateway.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I cancel my subscription anytime?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can cancel your subscription at any time. When you cancel, you'll continue to have access to your plan until the end of your current billing period. No hidden fees or penalties.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do you offer team discounts?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer special pricing for teams of 5 or more members. Contact our sales team for custom enterprise pricing and features tailored to your organization's needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do I access the video tutorials?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Once you sign up, you'll get immediate access to our member portal where all video tutorials are available. You can stream them online or download for offline viewing on our mobile app.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is there a free trial available?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a 14-day free trial for our Pro plan. No credit card required to start. You'll get full access to all features during the trial period.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Us section -->
         <section id="about">
             <div class="container">
@@ -267,30 +384,78 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div>
-                <ul>
-                    <li><a href="https://www.facebook.com/HolbertonSchool/">Facebook</a></li>
-                    <li><a href="https://twitter.com/holbertonschool">Twitter</a></li>
-                    <li><a href="https://www.instagram.com/holbertonschool/">Instagram</a></li>
-                </ul>
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Techium logo" width="140" height="35">
+                    </div>
+                    <p>Techium is a digital agency dedicated to creating amazing digital experiences. We help businesses build their brand and succeed online.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#works">Works</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#membership">Membership</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, San Francisco, CA 94107</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@techium.com</p>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-button">Subscribe</button>
+                    </form>
+                </div>
             </div>
-            <hr>
-            <p>© 2020 Techium, made with ♥ by students at Holberton School.</p>
-            <div>
-                <ul>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2024 Techium. All rights reserved.</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/HolbertonSchool/" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/holbertonschool" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/holbertonschool/" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/school/holberton-school/" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
+    <!-- JavaScript for mobile menu and FAQ -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
@@ -305,6 +470,36 @@
                         menuToggle.classList.remove('active');
                         navMenu.classList.remove('active');
                     });
+                });
+            }
+            
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on clicked question
+                    this.classList.toggle('active');
+                    
+                    // Close other FAQ items
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== this) {
+                            otherQuestion.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('.newsletter-input');
+                    if (emailInput.value) {
+                        alert('Thank you for subscribing! You will receive our newsletter soon.');
+                        emailInput.value = '';
+                    }
                 });
             }
         });
