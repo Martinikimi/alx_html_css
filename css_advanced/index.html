@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage - Techium</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-    <link rel="icon" type="image/png" href="./images/favicon.png">
-    
-    <!-- Link to the styles.css file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -143,28 +140,46 @@
         <!-- Testimonials section -->
         <section id="testimonials">
             <div class="container">
-                <header>
-                    <h2>Testimonials</h2>
-                    <p>We are more than a digital company</p>
+                <header class="testimonials-header">
+                    <h2 class="section-title">Testimonials</h2>
+                    <p class="section-subtitle">We are more than a digital company</p>
                 </header>
-                <div>
-                    <article>
-                        <blockquote>
-                            <p>I am completely blown away. Thanks to Techium, we've just launched our 5th website!</p>
-                            <cite>Yuri Y.</cite>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="images/testimonial-1.jpg" alt="Yuri Y.">
+                        </div>
+                        <blockquote class="testimonial-text">
+                            I am completely blown away. Thanks to Techium, we've just launched our 5th website!
                         </blockquote>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Yuri Y.</p>
+                            <p class="testimonial-role">CEO at Company</p>
+                        </div>
                     </article>
-                    <article>
-                        <blockquote>
-                            <p>Thank you so much for your help. Techium company is awesome!</p>
-                            <cite>Dorrie S.</cite>
+                    <article class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="images/testimonial-2.jpg" alt="Dorrie S.">
+                        </div>
+                        <blockquote class="testimonial-text">
+                            Thank you so much for your help. Techium company is awesome!
                         </blockquote>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Dorrie S.</p>
+                            <p class="testimonial-role">Marketing Director</p>
+                        </div>
                     </article>
-                    <article>
-                        <blockquote>
-                            <p>I love your system. Definitely worth the investment.</p>
-                            <cite>Sven H.</cite>
+                    <article class="testimonial-card">
+                        <div class="testimonial-avatar">
+                            <img src="images/testimonial-3.jpg" alt="Sven H.">
+                        </div>
+                        <blockquote class="testimonial-text">
+                            I love your system. Definitely worth the investment.
                         </blockquote>
+                        <div class="testimonial-author">
+                            <p class="testimonial-name">Sven H.</p>
+                            <p class="testimonial-role">CTO at Startup</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -219,7 +234,6 @@
                     navMenu.classList.toggle('active');
                 });
                 
-                // Close menu when clicking on a link
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', () => {
                         menuToggle.classList.remove('active');
