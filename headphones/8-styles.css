@@ -1,1 +1,246 @@
-
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Set current year in footer
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Hamburger menu elements
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Contact form elements
+    const contactForm = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+    
+    // Toggle mobile menu
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Update ARIA attributes
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle body scroll
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    // Close mobile menu
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+    
+    // Initialize hamburger menu
+    if (hamburger && navMenu) {
+        // Add click event to hamburger
+        hamburger.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Smooth scroll to section
+                const targetId = link.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        event.preventDefault();
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close menu after a short delay for smooth animation
+                        setTimeout(closeMenu, 300);
+                    }
+                }
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+        
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 480 && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            }, 250);
+        });
+    }
+    
+    // Character count for message textarea
+    if (messageInput && charCount) {
+        messageInput.addEventListener('input', function() {
+            const currentLength = this.value.length;
+            const maxLength = this.getAttribute('maxlength');
+            charCount.textContent = `${currentLength}/${maxLength}`;
+            
+            // Add warning class when approaching limit
+            const warningThreshold = maxLength * 0.9;
+            charCount.classList.remove('warning', 'error');
+            
+            if (currentLength > warningThreshold) {
+                charCount.classList.add('warning');
+            }
+            
+            if (currentLength >= maxLength) {
+                charCount.classList.add('error');
+            }
+        });
+    }
+    
+    // Form validation function
+    function validateField(input, errorElement) {
+        const value = input.value.trim();
+        const isValid = input.checkValidity();
+        
+        if (errorElement) {
+            if (!isValid && value !== '') {
+                errorElement.textContent = input.validationMessage;
+                errorElement.classList.add('show');
+                input.parentElement.classList.add('shake');
+                setTimeout(() => {
+                    input.parentElement.classList.remove('shake');
+                }, 500);
+            } else {
+                errorElement.textContent = '';
+                errorElement.classList.remove('show');
+            }
+        }
+        
+        return isValid;
+    }
+    
+    // Real-time validation
+    if (nameInput) {
+        nameInput.addEventListener('blur', function() {
+            validateField(this, document.getElementById('nameError'));
+        });
+        
+        nameInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                validateField(this, document.getElementById('nameError'));
+            }
+        });
+    }
+    
+    if (emailInput) {
+        emailInput.addEventListener('blur', function() {
+            validateField(this, document.getElementById('emailError'));
+        });
+        
+        emailInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                validateField(this, document.getElementById('emailError'));
+            }
+        });
+    }
+    
+    if (messageInput) {
+        messageInput.addEventListener('blur', function() {
+            validateField(this, document.getElementById('messageError'));
+        });
+        
+        messageInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                validateField(this, document.getElementById('messageError'));
+            }
+        });
+    }
+    
+    // Form submission
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            const isNameValid = validateField(nameInput, document.getElementById('nameError'));
+            const isEmailValid = validateField(emailInput, document.getElementById('emailError'));
+            const isMessageValid = validateField(messageInput, document.getElementById('messageError'));
+            
+            if (isNameValid && isEmailValid && isMessageValid) {
+                // Form is valid - simulate submission
+                const submitButton = this.querySelector('.submit-button');
+                const originalText = submitButton.textContent;
+                
+                // Show loading state
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Reset form
+                    contactForm.reset();
+                    charCount.textContent = '0/500';
+                    charCount.classList.remove('warning', 'error');
+                    
+                    // Show success message
+                    submitButton.textContent = 'Message Sent! ✓';
+                    submitButton.style.backgroundColor = '#4CAF50';
+                    
+                    // Reset after 3 seconds
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        submitButton.style.backgroundColor = '';
+                    }, 3000);
+                }, 1500);
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.error-message.show');
+                if (firstError) {
+                    firstError.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            }
+        });
+    }
+    
+    // Add smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                e.preventDefault();
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Update URL without jumping
+                history.pushState(null, null, targetId);
+            }
+        });
+    });
+});
