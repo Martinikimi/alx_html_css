@@ -1,1 +1,344 @@
+/* CSS Variables for consistent theming */
+:root {
+    /* Colors */
+    --primary-color: #FF6565;
+    --text-color: #FFFFFF;
+    --bg-dark: #071629;
+    --hover-opacity: 0.9;
+    
+    /* Typography */
+    --font-family: 'Source Sans Pro', sans-serif;
+    --font-size-small: 12px;
+    --font-size-base: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 32px;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    
+    /* Spacing */
+    --spacing-xs: 10px;
+    --spacing-sm: 20px;
+    --spacing-md: 40px;
+    --spacing-lg: 60px;
+    --spacing-xl: 100px;
+    
+    /* Breakpoints */
+    --mobile-breakpoint: 480px;
+    --tablet-breakpoint: 768px;
+    
+    /* Layout */
+    --max-width: 1000px;
+}
 
+/* CSS Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* Header Styles */
+.header {
+    min-height: 100vh;
+    background: 
+        linear-gradient(rgba(7, 22, 41, 0.9), rgba(7, 22, 41, 0.9)),
+        url('images/headphone_hero.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    position: relative;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo img {
+    width: 161px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Desktop Navigation */
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-link {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    position: relative;
+    padding: var(--spacing-xs) 0;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.menu-line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 50px;
+    margin-bottom: var(--spacing-lg);
+    transition: opacity 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:active,
+.cta-button:focus {
+    opacity: var(--hover-opacity);
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: var(--font-size-medium);
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    :root {
+        --font-size-large: 28px;
+        --spacing-lg: 40px;
+        --spacing-xl: 60px;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-large);
+    }
+    
+    .nav-menu {
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile Navigation */
+    .menu-icon {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--bg-dark);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-lg);
+        transition: right 0.3s ease;
+        z-index: 99;
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .menu-toggle:checked ~ .nav-menu {
+        right: 0;
+    }
+    
+    .menu-toggle:checked ~ .menu-icon .menu-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .menu-toggle:checked ~ .menu-icon .menu-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle:checked ~ .menu-icon .menu-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Mobile Hero */
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .cta-button {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 11px;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-description {
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+    }
+    
+    /* Logo adjustment for mobile */
+    .logo img {
+        width: 140px;
+        height: 28px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 320px) {
+    .hero-title {
+        font-size: 20px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+}
+
+/* Print styles */
+@media print {
+    .header {
+        min-height: auto;
+        background: none !important;
+        color: #000;
+    }
+    
+    .cta-button {
+        display: none;
+    }
+}
